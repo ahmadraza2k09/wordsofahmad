@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M. Ahmad Raza - Booklets</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #FF5F1F;
+      --white-color: #FFFFFF;
+      --footer-bg: #222222;
+      --footer-text: #cccccc;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #FF5F1F 0%, #e4541c 100%);
+      padding: 40px 20px;
+      color: white;
+      text-align: center;
+      animation: slideInDown 1s ease-out;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #FF5F1F, #FFD700, #FF5F1F);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.8rem;
+      font-weight: 700;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    }
+    header p {
+      margin: 10px 0 0;
+      font-size: 1.3rem;
+      opacity: 0.9;
+    }
+
+    .container {
+      padding: 40px 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    /* Booklet Themes */
+    .booklet {
+      border-radius: 16px;
+      padding: 25px;
+      background-color: white;
+      transition: transform 0.4s ease, box-shadow 0.3s ease;
+      animation: zoomIn 0.8s ease;
+      position: relative;
+      overflow: hidden;
+      border: none;
+    }
+    .booklet::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 8px;
+    }
+    
+    /* Individual booklet themes */
+    .booklet:nth-child(1) {
+      box-shadow: 0 8px 25px rgba(255, 95, 31, 0.15);
+    }
+    .booklet:nth-child(1)::before {
+      background: linear-gradient(90deg, #FF5F1F, #8B4513);
+    }
+    .booklet:nth-child(1) h2 {
+      color: #8B4513;
+    }
+    
+    .booklet:nth-child(2) {
+      box-shadow: 0 8px 25px rgba(30, 144, 255, 0.15);
+    }
+    .booklet:nth-child(2)::before {
+      background: linear-gradient(90deg, #1E90FF, #003366);
+    }
+    .booklet:nth-child(2) h2 {
+      color: #003366;
+    }
+    
+    .booklet:nth-child(3) {
+      box-shadow: 0 8px 25px rgba(46, 204, 113, 0.15);
+    }
+    .booklet:nth-child(3)::before {
+      background: linear-gradient(90deg, #2ECC71, #006400);
+    }
+    .booklet:nth-child(3) h2 {
+      color: #006400;
+    }
+    
+    .booklet:nth-child(4) {
+      box-shadow: 0 8px 25px rgba(155, 89, 182, 0.15);
+    }
+    .booklet:nth-child(4)::before {
+      background: linear-gradient(90deg, #9B59B6, #4B0082);
+    }
+    .booklet:nth-child(4) h2 {
+      color: #4B0082;
+    }
+
+    .booklet:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+    .booklet img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .booklet:hover img {
+      transform: scale(1.03);
+    }
+    .booklet h2 {
+      font-size: 1.6rem;
+      margin: 0 0 15px;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    .booklet ul {
+      padding-left: 20px;
+      margin: 0 0 20px;
+    }
+    .booklet li {
+      margin-bottom: 8px;
+      position: relative;
+    }
+    .booklet li::before {
+      content: "•";
+      color: var(--primary-color);
+      font-weight: bold;
+      display: inline-block; 
+      width: 1em;
+      margin-left: -1em;
+    }
+    .booklet p {
+      margin: 5px 0;
+      font-size: 0.95rem;
+      color: #666;
+    }
+    .buttons {
+      margin-top: 20px;
+      display: flex;
+      gap: 12px;
+    }
+    .buttons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 20px;
+      background-color: var(--primary-color);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: all 0.3s;
+      font-weight: 500;
+      flex: 1;
+    }
+    .buttons a:hover {
+      background-color: #e4541c;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .buttons a i {
+      margin-right: 8px;
+    }
+
+    footer {
+      background-color: var(--footer-bg);
+      color: var(--footer-text);
+      text-align: center;
+      padding: 40px 10px;
+      font-size: 1rem;
+      margin-top: 50px;
+    }
+    footer a {
+      color: var(--primary-color);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    footer a:hover {
+      color: #FFD700;
+    }
+    .social-links {
+      margin: 20px 0;
+    }
+    .social-links a {
+      display: inline-block;
+      margin: 0 10px;
+      font-size: 1.5rem;
+      color: var(--footer-text);
+      transition: color 0.3s, transform 0.3s;
+    }
+    .social-links a:hover {
+      color: var(--primary-color);
+      transform: translateY(-3px);
+    }
+
+    @keyframes slideInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes zoomIn {
+      0% { opacity: 0; transform: scale(0.9); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    /* Floating decoration elements */
+    .floating-circle {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.1;
+      z-index: -1;
+    }
+    .circle-1 {
+      width: 200px;
+      height: 200px;
+      background: var(--primary-color);
+      top: -50px;
+      right: -50px;
+    }
+    .circle-2 {
+      width: 150px;
+      height: 150px;
+      background: #1E90FF;
+      bottom: -30px;
+      left: -30px;
+    }
+
+    @media (max-width: 768px) {
+      header h1 { font-size: 2.2rem; }
+      header p { font-size: 1.1rem; }
+      .container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      .buttons {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="floating-circle circle-1"></div>
+    <div class="floating-circle circle-2"></div>
+    <h1>M. Ahmad Raza</h1>
+    <p>A student, researcher and writer</p>
+  </header>
+
+  <section class="container">
+    <div class="booklet">
+      <img src="untoldstoryofbalochistan.jpeg" alt="The Untold Story of Balochistan Poster">
+      <h2>The Untold Story of Balochistan</h2>
+      <ul>
+        <li>The Forced Accession of Balochistan</li>
+        <li>Military Operations and Human Rights Violations</li>
+        <li>The Theft of Balochistan's Resources</li>
+        <li>Lack of Development and Education</li>
+        <li>Cultural Suppression</li>
+        <li>The Pakistan Army's Atrocities</li>
+        <li>Mahrang Baloch and Her Contributions</li>
+        <li>The Emergence of Baloch Liberation Movements</li>
+      </ul>
+      <p><strong>Total Pages:</strong> 10 (with references)</p>
+      <div class="buttons">
+        <a href="Untlod Story of Balochistan.pdf" target="_blank"><i class="fas fa-eye"></i> View</a>
+        <a href="Untlod Story of Balochistan.pdf" download><i class="fas fa-download"></i> Download</a>
+      </div>
+    </div>
+
+    <div class="booklet">
+      <img src="becomeanarchitechtofyourfuture.jpeg" alt="Become Architect of your Future Poster">
+      <h2>Become Architect of your Future</h2>
+      <ul>
+        <li>The Age Between 11 to 20 – Not Just for Fun</li>
+        <li>The Power of Small Decisions</li>
+        <li>The Importance of Education – Clear the Myths</li>
+        <li>Choosing the Right Profession</li>
+        <li>Final Words – Build Before It's Too Late</li>
+      </ul>
+      <p><strong>Total Pages:</strong> 10</p>
+      <div class="buttons">
+        <a href="Become Architect of your Future.pdf" target="_blank"><i class="fas fa-eye"></i> View</a>
+        <a href="becomeanarchitechtofyourfuture.jpeg" download><i class="fas fa-download"></i> Download</a>
+      </div>
+    </div>
+
+    <div class="booklet">
+      <img src="unvelingpakistaneconomy.jpeg" alt="Unveiling Pakistan's Economy Poster">
+      <h2>Unveiling Pakistan's Economy</h2>
+      <ul>
+        <li>What is GDP?</li>
+        <li>What is GDP per Capita?</li>
+        <li>What is PPP?</li>
+        <li>What is PPP per Capita?</li>
+        <li>When Did Pakistan's GDP Rise and Fall the Most?</li>
+        <li>How Much Money Do People Need VS What They Actually Earn in Pakistan?</li>
+        <li>Corruption in Pakistan</li>
+        <li>Currency Misconceptions</li>
+      </ul>
+      <p><strong>Total Pages:</strong> 13 (with references)</p>
+      <div class="buttons">
+        <a href="Unveiling Pakistan's Economy.pdf" target="_blank"><i class="fas fa-eye"></i> View</a>
+        <a href="Unveiling Pakistan's Economy.pdf" download><i class="fas fa-download"></i> Download</a>
+      </div>
+    </div>
+
+    <div class="booklet">
+      <img src="storyofpakindiawar.jpeg" alt="The Story of the Pak-India War Poster">
+      <h2>The Story of the Pak-India War</h2>
+      <ul>
+        <li>The Pahalgam Attack (the spark)</li>
+        <li>The Indus Water Treaty and Its Importance</li>
+        <li>Who Attacked First and Where?</li>
+        <li>Mission Sindoor and Bunyan Al Marsoos</li>
+        <li>Who Actually Won?</li>
+      </ul>
+      <p><strong>Total Pages:</strong> 12 (with references)</p>
+      <div class="buttons">
+        <a href="The Story of the Pak-India War.pdf" target="_blank"><i class="fas fa-eye"></i> View</a>
+        <a href="The Story of the Pak-India War.pdf" download><i class="fas fa-download"></i> Download</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="social-links">
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-researchgate"></i></a>
+    </div>
+    <p>Contact: <strong>M. Ahmad Raza</strong> | Email: <a href="mailto:ahmadrazahfa@gmail.com">ahmadrazahfa@gmail.com</a> | Phone: +92-340-5463601</p>
+    <p>&copy; 2025 All Rights Reserved. Designed with <i class="fas fa-heart" style="color: #FF5F1F;"></i> by Ahmad</p>
+  </footer>
+</body>
+</html>
