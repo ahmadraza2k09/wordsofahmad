@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>M. Ahmad Raza - Booklets</title>
-  <link rel="icon" type="image/png" href="logo.png"/>
+  <link rel="icon" type="image/png" href="logo.jfif"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 
@@ -143,7 +143,7 @@
     .booklet img {
       width: 100%;
       height: 500px;
-      object-fit: cover;
+      object-fit: fit;
       border-radius: 10px;
       margin-bottom: 20px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.3);
@@ -221,6 +221,24 @@
       transform: translateY(-3px);
     }
 
+    .whatsapp-button {
+      background-color: #128C7E !important;
+      color: white !important;
+      padding: 10px 15px !important;
+      border-radius: 5px !important;
+      text-decoration: none !important;
+      font-weight: bold !important;
+      display: inline-block !important;
+      margin-top: 5px !important;
+      transition: all 0.3s ease !important;
+    }
+    
+    .whatsapp-button:hover {
+      background-color: #0C6B58 !important;
+      transform: translateY(-2px) !important;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3) !important;
+    }
+
     @keyframes slideInDown {
       from { opacity: 0; transform: translateY(-30px); }
       to { opacity: 1; transform: translateY(0); }
@@ -254,7 +272,7 @@
   <section class="container">
 
     <div class="booklet">
-      <img src="untoldstoryofbalochistan.jpeg" alt="The Untold Story of Balochistan Poster">
+      <img src="untoldstoryofbalochistan.jfif" alt="The Untold Story of Balochistan Poster">
       <h2>The Untold Story of Balochistan</h2>
       <ul>
         <li>The Forced Accession of Balochistan</li>
@@ -286,7 +304,7 @@
       <p><strong>Total Pages:</strong> 10</p>
       <div class="buttons">
         <a href="Become Architect of your Future.pdf" target="_blank"><i class="fas fa-eye"></i> View</a>
-        <a href="becomeanarchitechtofyourfuture.jpeg" download><i class="fas fa-download"></i> Download</a>
+        <a href="becomeanarchitechtofyourfuture.pdf" download><i class="fas fa-download"></i> Download</a>
       </div>
     </div>
 
@@ -330,19 +348,15 @@
 
   <footer>
     <div class="social-links">
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-linkedin"></i></a>
-      <a href="#"><i class="fab fa-github"></i></a>
-      <a href="#"><i class="fab fa-researchgate"></i></a>
+      <a href="https://www.facebook.com/profile.php?id=61551895114490" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.linkedin.com/in/ahmadraza2k09/" target="_blank"><i class="fab fa-linkedin"></i></a>
     </div>
 
     <p><strong>Contact:</strong> M. Ahmad Raza | Email: <a href="mailto:ahmadrazahfa@gmail.com">ahmadrazahfa@gmail.com</a> | Phone: +923405463601</p>
 
     <p>
-      <a href="https://wa.me/923405463601" target="_blank"
-         style="background-color: #25D366; color: white; padding: 10px 15px; border-radius: 5px;
-         text-decoration: none; font-weight: bold; display: inline-block; margin-top: 5px;">
-         📞 Chat on WhatsApp
+      <a href="https://wa.me/923405463601" target="_blank" class="whatsapp-button">
+        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
       </a>
     </p>
 
