@@ -1,37 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>M. Ahmad Raza - Booklets</title>
-  <link rel="icon" type="image/png" href="logo.png">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="logo.png"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --primary-color: #FF5F1F;
-      --white-color: #FFFFFF;
-      --footer-bg: #222222;
-      --footer-text: #cccccc;
+      --primary-color: #939597;
+      --secondary-color: #F5F5F5;
+      --accent-color: #FFFFFF;
+      --bg-color: #2F2F2F;
+      --text-light: #f0f0f0;
+      --text-muted: #cccccc;
     }
 
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: #f9f9f9;
-      color: #333;
+      background: var(--bg-color);
+      color: var(--text-light);
       line-height: 1.6;
     }
 
     header {
-      background: linear-gradient(135deg, #FF5F1F 0%, #e4541c 100%);
+      background: linear-gradient(135deg, #333333 0%, #2A2A2A 100%);
       padding: 40px 20px;
-      color: white;
       text-align: center;
       animation: slideInDown 1s ease-out;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
       position: relative;
       overflow: hidden;
     }
+
     header::before {
       content: "";
       position: absolute;
@@ -39,18 +43,21 @@
       left: 0;
       right: 0;
       height: 4px;
-      background: linear-gradient(90deg, #FF5F1F, #FFD700, #FF5F1F);
+      background: linear-gradient(90deg, #939597, #FFFFFF, #939597);
     }
+
     header h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      font-weight: 500;
       margin: 0;
-      font-size: 2.8rem;
-      font-weight: 700;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+      color: white;
     }
+
     header p {
       margin: 10px 0 0;
       font-size: 1.3rem;
-      opacity: 0.9;
+      opacity: 0.8;
     }
 
     .container {
@@ -62,19 +69,18 @@
       margin: 0 auto;
     }
 
-    /* Booklet Themes */
     .booklet {
       border-radius: 16px;
       padding: 25px;
-      background-color: white;
+      background-color: #3A3A3A;
       transition: transform 0.4s ease, box-shadow 0.3s ease;
       animation: zoomIn 0.8s ease;
       position: relative;
       overflow: hidden;
-      border: none;
       display: flex;
       flex-direction: column;
     }
+
     .booklet::before {
       content: "";
       position: absolute;
@@ -83,259 +89,135 @@
       right: 0;
       height: 8px;
     }
-    
-    /* Individual booklet themes */
-    .booklet:nth-child(1) {
-      box-shadow: 0 8px 25px rgba(255, 95, 31, 0.15);
-    }
+
     .booklet:nth-child(1)::before {
-      background: linear-gradient(90deg, #FF5F1F, #8B4513);
-    }
-    .booklet:nth-child(1) h2 {
-      color: #8B4513;
-    }
-    
-    .booklet:nth-child(2) {
-      box-shadow: 0 8px 25px rgba(30, 144, 255, 0.15);
+      background: linear-gradient(90deg, #939597, #6C6D70);
     }
     .booklet:nth-child(2)::before {
-      background: linear-gradient(90deg, #1E90FF, #003366);
-    }
-    .booklet:nth-child(2) h2 {
-      color: #003366;
-    }
-    
-    .booklet:nth-child(3) {
-      box-shadow: 0 8px 25px rgba(46, 204, 113, 0.15);
+      background: linear-gradient(90deg, #939597, #6C6D70);
     }
     .booklet:nth-child(3)::before {
-      background: linear-gradient(90deg, #2ECC71, #006400);
-    }
-    .booklet:nth-child(3) h2 {
-      color: #006400;
-    }
-    
-    .booklet:nth-child(4) {
-      box-shadow: 0 8px 25px rgba(155, 89, 182, 0.15);
+      background: linear-gradient(90deg, #939597, #6C6D70);
     }
     .booklet:nth-child(4)::before {
-      background: linear-gradient(90deg, #9B59B6, #4B0082);
+      background: linear-gradient(90deg, #939597, #6C6D70);
     }
-    .booklet:nth-child(4) h2 {
-      color: #4B0082;
+    .booklet:nth-child(5)::before {
+      background: linear-gradient(90deg, #939597, #6C6D70);
     }
 
-    .booklet:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-    }
-    .booklet img {
-      width: 100%;
-      height: 500px;
-      object-fit: fill;
-      border-radius: 10px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-    }
-    .booklet:hover img {
-      transform: scale(1.03);
-    }
     .booklet h2 {
       font-size: 1.6rem;
-      margin: 0 0 15px;
       font-weight: 600;
-      transition: color 0.3s ease;
+      margin-bottom: 15px;
+      color: #ffffff;
     }
+
     .booklet ul {
       padding-left: 20px;
       margin: 0 0 20px;
       flex-grow: 1;
     }
+
     .booklet li {
       margin-bottom: 8px;
       position: relative;
+      color: #eaeaea;
     }
+
     .booklet li::before {
       content: "•";
-      color: var(--primary-color);
+      color: var(--accent-color);
       font-weight: bold;
-      display: inline-block; 
+      display: inline-block;
       width: 1em;
       margin-left: -1em;
     }
+
     .booklet p {
       margin: 5px 0;
       font-size: 0.95rem;
-      color: #666;
+      color: #bbb;
     }
+
+    .booklet img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .booklet:hover img {
+      transform: scale(1.03);
+    }
+
+    .booklet:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    }
+
     .buttons {
       margin-top: 20px;
       display: flex;
       gap: 12px;
     }
+
     .buttons a {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       padding: 12px 20px;
-      background-color: var(--primary-color);
-      color: white;
+      background-color: var(--accent-color);
+      color: #333;
       text-decoration: none;
       border-radius: 8px;
       transition: all 0.3s;
       font-weight: 500;
       flex: 1;
     }
+
     .buttons a:hover {
-      background-color: #e4541c;
+      background-color: #e0e0e0;
       transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     }
+
     .buttons a i {
       margin-right: 8px;
     }
 
-    /* Like and Comment Section */
-    .engagement {
-      margin-top: 20px;
-      border-top: 1px solid #eee;
-      padding-top: 15px;
-    }
-    
-    .like-section {
-      display: flex;
-      align-items: center;
-      margin-bottom: 15px;
-    }
-    
-    .like-btn {
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-size: 1.2rem;
-      color: #666;
-      transition: all 0.3s;
-      display: flex;
-      align-items: center;
-      padding: 5px 10px;
-      border-radius: 20px;
-    }
-    
-    .like-btn:hover {
-      background: #f5f5f5;
-    }
-    
-    .like-btn.liked {
-      color: #ff4757;
-    }
-    
-    .like-count {
-      margin-left: 5px;
-      font-size: 0.9rem;
-    }
-    
-    .comment-section {
-      margin-top: 10px;
-    }
-    
-    .comment-form {
-      display: flex;
-      margin-bottom: 10px;
-    }
-    
-    .comment-input {
-      flex: 1;
-      padding: 8px 12px;
-      border: 1px solid #ddd;
-      border-radius: 20px;
-      font-family: inherit;
-      font-size: 0.9rem;
-      outline: none;
-      transition: border 0.3s;
-    }
-    
-    .comment-input:focus {
-      border-color: var(--primary-color);
-    }
-    
-    .comment-submit {
-      margin-left: 10px;
-      padding: 8px 15px;
-      background-color: var(--primary-color);
-      color: white;
-      border: none;
-      border-radius: 20px;
-      cursor: pointer;
-      font-size: 0.9rem;
-      transition: background 0.3s;
-    }
-    
-    .comment-submit:hover {
-      background-color: #e4541c;
-    }
-    
-    .comments-list {
-      max-height: 150px;
-      overflow-y: auto;
-      padding-right: 5px;
-    }
-    
-    .comment {
-      padding: 8px 0;
-      border-bottom: 1px solid #f0f0f0;
-      font-size: 0.85rem;
-    }
-    
-    .comment:last-child {
-      border-bottom: none;
-    }
-    
-    .comment-author {
-      font-weight: bold;
-      color: #333;
-    }
-    
-    .comment-text {
-      margin-top: 3px;
-      color: #555;
-    }
-    
-    .comment-time {
-      font-size: 0.7rem;
-      color: #999;
-      margin-top: 3px;
-      display: block;
-    }
-
     footer {
-      background-color: var(--footer-bg);
-      color: var(--footer-text);
+      background-color: #222;
+      color: #aaa;
       text-align: center;
       padding: 40px 10px;
       font-size: 1rem;
       margin-top: 50px;
     }
+
     footer a {
-      color: var(--primary-color);
+      color: var(--accent-color);
       text-decoration: none;
       transition: color 0.3s;
     }
+
     footer a:hover {
-      color: #FFD700;
+      color: #939597;
     }
-    .social-links {
-      margin: 20px 0;
-    }
+
     .social-links a {
       display: inline-block;
       margin: 0 10px;
       font-size: 1.5rem;
-      color: var(--footer-text);
+      color: #bbb;
       transition: color 0.3s, transform 0.3s;
     }
+
     .social-links a:hover {
-      color: var(--primary-color);
+      color: var(--accent-color);
       transform: translateY(-3px);
     }
 
@@ -343,35 +225,10 @@
       from { opacity: 0; transform: translateY(-30px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+
     @keyframes zoomIn {
       0% { opacity: 0; transform: scale(0.9); }
       100% { opacity: 1; transform: scale(1); }
-    }
-
-    /* Floating decoration elements */
-    .floating-circle {
-      position: absolute;
-      border-radius: 50%;
-      opacity: 0.1;
-      z-index: -1;
-    }
-    .circle-1 {
-      width: 200px;
-      height: 200px;
-      background: var(--primary-color);
-      top: -50px;
-      right: -50px;
-    }
-    .circle-2 {
-      width: 150px;
-      height: 150px;
-      background: #1E90FF;
-      bottom: -30px;
-      left: -30px;
     }
 
     @media (max-width: 768px) {
@@ -388,14 +245,14 @@
   </style>
 </head>
 <body>
+
   <header>
-    <div class="floating-circle circle-1"></div>
-    <div class="floating-circle circle-2"></div>
-    <h1>M. Ahmad Raza</h1>
-    <p>A student, researcher and writer</p>
+    <h1>Words of Ahmad</h1>
+    <p>A Project of Youth Awareness Network </p>
   </header>
 
   <section class="container">
+
     <div class="booklet">
       <img src="untoldstoryofbalochistan.jpeg" alt="The Untold Story of Balochistan Poster">
       <h2>The Untold Story of Balochistan</h2>
@@ -414,30 +271,10 @@
         <a href="Untlod Story of Balochistan.pdf" target="_blank"><i class="fas fa-eye"></i> View</a>
         <a href="Untlod Story of Balochistan.pdf" download><i class="fas fa-download"></i> Download</a>
       </div>
-      
-      <!-- Like and Comment Section -->
-      <div class="engagement">
-        <div class="like-section">
-          <button class="like-btn" onclick="toggleLike(this)">
-            <i class="far fa-heart"></i>
-            <span class="like-count">0</span>
-          </button>
-        </div>
-        
-        <div class="comment-section">
-          <div class="comment-form">
-            <input type="text" class="comment-input" placeholder="Add a comment...">
-            <button class="comment-submit" onclick="addComment(this)">Post</button>
-          </div>
-          <div class="comments-list">
-            <!-- Recent comments will appear here -->
-          </div>
-        </div>
-      </div>
     </div>
 
     <div class="booklet">
-      <img src="becomeanarchitechtofyourfuture.jpeg" alt="Become Architect of your Future Poster">
+      <img src="becomeanarchitechtofyourfuture.png" alt="Become Architect of your Future Poster">
       <h2>Become Architect of your Future</h2>
       <ul>
         <li>The Age Between 11 to 20 – Not Just for Fun</li>
@@ -450,26 +287,6 @@
       <div class="buttons">
         <a href="Become Architect of your Future.pdf" target="_blank"><i class="fas fa-eye"></i> View</a>
         <a href="becomeanarchitechtofyourfuture.jpeg" download><i class="fas fa-download"></i> Download</a>
-      </div>
-      
-      <!-- Like and Comment Section -->
-      <div class="engagement">
-        <div class="like-section">
-          <button class="like-btn" onclick="toggleLike(this)">
-            <i class="far fa-heart"></i>
-            <span class="like-count">0</span>
-          </button>
-        </div>
-        
-        <div class="comment-section">
-          <div class="comment-form">
-            <input type="text" class="comment-input" placeholder="Add a comment...">
-            <button class="comment-submit" onclick="addComment(this)">Post</button>
-          </div>
-          <div class="comments-list">
-            <!-- Recent comments will appear here -->
-          </div>
-        </div>
       </div>
     </div>
 
@@ -491,26 +308,6 @@
         <a href="Unveiling Pakistan's Economy.pdf" target="_blank"><i class="fas fa-eye"></i> View</a>
         <a href="Unveiling Pakistan's Economy.pdf" download><i class="fas fa-download"></i> Download</a>
       </div>
-      
-      <!-- Like and Comment Section -->
-      <div class="engagement">
-        <div class="like-section">
-          <button class="like-btn" onclick="toggleLike(this)">
-            <i class="far fa-heart"></i>
-            <span class="like-count">0</span>
-          </button>
-        </div>
-        
-        <div class="comment-section">
-          <div class="comment-form">
-            <input type="text" class="comment-input" placeholder="Add a comment...">
-            <button class="comment-submit" onclick="addComment(this)">Post</button>
-          </div>
-          <div class="comments-list">
-            <!-- Recent comments will appear here -->
-          </div>
-        </div>
-      </div>
     </div>
 
     <div class="booklet">
@@ -528,138 +325,29 @@
         <a href="The Story of the Pak-India War.pdf" target="_blank"><i class="fas fa-eye"></i> View</a>
         <a href="The Story of the Pak-India War.pdf" download><i class="fas fa-download"></i> Download</a>
       </div>
-      
-      <!-- Like and Comment Section -->
-      <div class="engagement">
-        <div class="like-section">
-          <button class="like-btn" onclick="toggleLike(this)">
-            <i class="far fa-heart"></i>
-            <span class="like-count">0</span>
-          </button>
-        </div>
-        
-        <div class="comment-section">
-          <div class="comment-form">
-            <input type="text" class="comment-input" placeholder="Add a comment...">
-            <button class="comment-submit" onclick="addComment(this)">Post</button>
-          </div>
-          <div class="comments-list">
-            <!-- Recent comments will appear here -->
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
-  <footer style="background-color: #1e1e1e; padding: 30px 0; text-align: center; font-family: Arial, sans-serif; color: white;">
+  <footer>
+    <div class="social-links">
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-researchgate"></i></a>
+    </div>
 
-  <!-- Social Links -->
-  <div class="social-links" style="margin-bottom: 20px;">
-    <a href="#" style="color: white; margin: 0 10px; font-size: 20px;"><i class="fab fa-twitter"></i></a>
-    <a href="#" style="color: white; margin: 0 10px; font-size: 20px;"><i class="fab fa-linkedin"></i></a>
-    <a href="#" style="color: white; margin: 0 10px; font-size: 20px;"><i class="fab fa-github"></i></a>
-    <a href="#" style="color: white; margin: 0 10px; font-size: 20px;"><i class="fab fa-researchgate"></i></a>
-  </div>
+    <p><strong>Contact:</strong> M. Ahmad Raza | Email: <a href="mailto:ahmadrazahfa@gmail.com">ahmadrazahfa@gmail.com</a> | Phone: +923405463601</p>
 
-  <!-- Contact Info -->
-  <p style="margin: 5px 0;">
-    <strong>Contact:</strong> M. Ahmad Raza |
-    Email: <a href="mailto:ahmadrazahfa@gmail.com" style="color: #FF5F1F; text-decoration: none;">ahmadrazahfa@gmail.com</a> |
-    Phone: +923405463601
-  </p>
+    <p>
+      <a href="https://wa.me/923405463601" target="_blank"
+         style="background-color: #25D366; color: white; padding: 10px 15px; border-radius: 5px;
+         text-decoration: none; font-weight: bold; display: inline-block; margin-top: 5px;">
+         📞 Chat on WhatsApp
+      </a>
+    </p>
 
-  <!-- WhatsApp Button -->
-  <p style="margin: 10px 0;">
-    <a href="https://wa.me/923405463601" target="_blank"
-       style="background-color: #25D366; color: white; padding: 10px 15px; border-radius: 5px;
-       text-decoration: none; font-weight: bold; display: inline-block; margin-top: 5px;">
-       📞 Chat on WhatsApp
-    </a>
-  </p>
+    <p>&copy; 2025 All Rights Reserved. Designed with <span style="color: #FFFFFF;">❤️</span> by Ahmad</p>
+  </footer>
 
-  <!-- Bottom Text -->
-  <p style="margin: 10px 0;">
-    &copy; 2025 All Rights Reserved. Designed with
-    <span style="color: #FF5F1F;">❤️</span> by Ahmad
-  </p>
-
-</footer>
-
-<script>
-  // Like functionality
-  function toggleLike(button) {
-    const heartIcon = button.querySelector('i');
-    const likeCount = button.querySelector('.like-count');
-    
-    if (button.classList.contains('liked')) {
-      // Unlike
-      button.classList.remove('liked');
-      heartIcon.classList.remove('fas');
-      heartIcon.classList.add('far');
-      likeCount.textContent = parseInt(likeCount.textContent) - 1;
-    } else {
-      // Like
-      button.classList.add('liked');
-      heartIcon.classList.remove('far');
-      heartIcon.classList.add('fas');
-      likeCount.textContent = parseInt(likeCount.textContent) + 1;
-    }
-  }
-  
-  // Comment functionality
-  function addComment(button) {
-    const commentForm = button.parentElement;
-    const commentInput = commentForm.querySelector('.comment-input');
-    const commentsList = commentForm.parentElement.querySelector('.comments-list');
-    
-    if (commentInput.value.trim() === '') return;
-    
-    // Create new comment element
-    const commentDiv = document.createElement('div');
-    commentDiv.className = 'comment';
-    
-    const authorSpan = document.createElement('span');
-    authorSpan.className = 'comment-author';
-    authorSpan.textContent = 'Guest';
-    
-    const textP = document.createElement('p');
-    textP.className = 'comment-text';
-    textP.textContent = commentInput.value;
-    
-    const timeSpan = document.createElement('span');
-    timeSpan.className = 'comment-time';
-    timeSpan.textContent = 'Just now';
-    
-    commentDiv.appendChild(authorSpan);
-    commentDiv.appendChild(textP);
-    commentDiv.appendChild(timeSpan);
-    
-    // Add to top of comments list
-    if (commentsList.firstChild) {
-      commentsList.insertBefore(commentDiv, commentsList.firstChild);
-    } else {
-      commentsList.appendChild(commentDiv);
-    }
-    
-    // Clear input
-    commentInput.value = '';
-    
-    // Limit to 10 comments
-    if (commentsList.children.length > 10) {
-      commentsList.removeChild(commentsList.lastChild);
-    }
-  }
-  
-  // Allow pressing Enter to submit comment
-  document.querySelectorAll('.comment-input').forEach(input => {
-    input.addEventListener('keypress', function(e) {
-      if (e.key === 'Enter') {
-        const submitBtn = this.parentElement.querySelector('.comment-submit');
-        addComment(submitBtn);
-      }
-    });
-  });
-</script>
-  
 </body>
 </html>
