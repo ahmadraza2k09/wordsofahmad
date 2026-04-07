@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Instagram, Link as LinkIcon, Linkedin, Facebook } from "lucide-react";
+import { Instagram, Link as LinkIcon, Linkedin, Facebook, ExternalLink } from "lucide-react";
 
 interface SocialLink {
   name: string;
@@ -11,23 +11,28 @@ export default function Footer() {
   const socialLinks: SocialLink[] = [
     {
       name: "Instagram",
-      url: "https://instagram.com",
+      url: "https://www.instagram.com/unknownraza/",
       icon: <Instagram size={24} />,
     },
     {
-      name: "Linktree",
-      url: "https://linktr.ee",
+      name: "Link.me",
+      url: "https://link.me/ahmad.raza",
       icon: <LinkIcon size={24} />,
     },
     {
       name: "LinkedIn",
-      url: "https://linkedin.com",
+      url: "https://www.linkedin.com/in/ahmadraza2k09",
       icon: <Linkedin size={24} />,
     },
     {
       name: "Facebook",
-      url: "https://facebook.com",
+      url: "https://www.facebook.com/ahmadraza2k09",
       icon: <Facebook size={24} />,
+    },
+    {
+      name: "CEE Exchange",
+      url: "https://exchanges.state.gov/us/program/community-engagement-exchange-cee",
+      icon: <ExternalLink size={20} />,
     },
   ];
 

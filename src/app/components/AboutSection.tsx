@@ -22,7 +22,8 @@ export default function AboutSection({ name, bio, imageUrl }: AboutSectionProps)
           About the Writer
         </h2>
 
-        <div className="flex flex-col md:flex-row gap-12 items-center">
+        <div className="rounded-2xl p-8 bg-slate-50/70 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 shadow-lg">
+          <div className="flex flex-col md:flex-row gap-12 items-center">
           <motion.div
             className="flex-shrink-0"
             initial={{ opacity: 0, x: -30 }}
@@ -30,11 +31,12 @@ export default function AboutSection({ name, bio, imageUrl }: AboutSectionProps)
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="w-64 h-64 rounded-2xl overflow-hidden shadow-xl ring-4 ring-slate-200 dark:ring-slate-700">
+            <div className="w-64 h-64 rounded-2xl overflow-hidden shadow-xl ring-4 ring-slate-200 dark:ring-slate-700 flex items-center justify-center bg-slate-100 dark:bg-slate-700">
               <img
                 src={imageUrl}
                 alt={name}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-center"
+                style={{maxWidth: '100%', maxHeight: '100%'}}
               />
             </div>
           </motion.div>
@@ -53,6 +55,7 @@ export default function AboutSection({ name, bio, imageUrl }: AboutSectionProps)
               {bio}
             </p>
           </motion.div>
+          </div>
         </div>
       </motion.div>
     </section>

@@ -1,12 +1,21 @@
 import { motion } from "motion/react";
 import BookletCard from "./components/BookletCard";
 import AboutSection from "./components/AboutSection";
+import ReviewForm from "./components/ReviewForm";
 import Footer from "./components/Footer";
 import DarkModeToggle from "./components/DarkModeToggle";
 import profileImage from "../assets/59bdb75c671f626198cb74a71944a56e15def094.png";
 
 export default function App() {
   const booklets = [
+    {
+      title: "Balochistan's Booklet",
+      description:
+        "An awareness booklet focused on Balochistan — history, culture, and local initiatives.",
+      pages: 16,
+      coverImage: "/balochistan.jpg",
+      pdfUrl: "/Balochistan Booklet.pdf",
+    },
     {
       title: "Become Architect of your Future",
       description:
@@ -33,13 +42,7 @@ export default function App() {
     },
   ];
 
-  const writerBio = `Muhammad Ahmad Raza is a passionate student, researcher, and youth leader from Pakistan. As the founder of Youth Awareness Network (YAN), he is dedicated to spreading awareness, empowering young people, and creating opportunities for growth and learning.
-
-He is an alumnus of the Access Microscholarship Program and was selected among top students across Pakistan to attend the Access Pakistan Student Summit 2025. Ahmad has actively led impactful community projects such as "Fuel the Future," supported by RELO and the U.S. Embassy Islamabad.
-
-With a strong interest in research, writing, and innovation, he has authored multiple awareness-based booklets aimed at educating and inspiring youth. Alongside his academic excellence, he works as a UI/UX designer, creating simple and user-friendly digital solutions.
-
-Through his work, Ahmad aims to connect youth globally, promote knowledge-sharing, and inspire positive change in society.`;
+  const writerBio = `Muhammad Ahmad Raza is a passionate student, researcher, and youth leader from Pakistan. He is the founder of Youth Awareness Network (YAN), working to spread awareness and empower young people. He is an alumnus of the Access Microscholarship Program and was selected among top students across Pakistan for the Access Pakistan Student Summit 2025. Ahmad contributed as a team member in the “Fuel the Future” project, supported by RELO and the U.S. Embassy Islamabad. He has authored multiple awareness-based booklets and also works as a UI/UX designer, creating simple and user-friendly digital solutions. Through his work, he aims to connect youth, promote knowledge-sharing, and inspire positive change.`;
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white via-slate-50 to-white dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 transition-colors duration-300">
@@ -106,6 +109,8 @@ Through his work, Ahmad aims to connect youth globally, promote knowledge-sharin
         bio={writerBio}
         imageUrl={profileImage}
       />
+
+      <ReviewForm />
 
       {/* Footer */}
       <Footer />
