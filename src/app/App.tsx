@@ -14,7 +14,7 @@ export default function App() {
         "An awareness booklet focused on Balochistan — history, culture, and local initiatives.",
       pages: 16,
       coverImage: "/balochistan.jpg",
-      pdfUrl: "/Balochistan Booklet.pdf",
+      pdfUrl: "/The Untold Story of Balochistan.pdf",
     },
     {
       title: "Become Architect of your Future",
