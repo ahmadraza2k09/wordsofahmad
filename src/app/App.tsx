@@ -4,7 +4,7 @@ import AboutSection from "./components/AboutSection";
 import ReviewForm from "./components/ReviewForm";
 import Footer from "./components/Footer";
 import DarkModeToggle from "./components/DarkModeToggle";
-import profileImage from "../assets/59bdb75c671f626198cb74a71944a56e15def094.png";
+import profileImage from "../assets/ahmad.jpg";
 
 export default function App() {
   const booklets = [
@@ -25,14 +25,6 @@ export default function App() {
       pdfUrl: "/Become Architect of your Future.pdf",
     },
     {
-      title: "The Story of the Pak-India War",
-      description:
-        "An in-depth historical account of the Pak-India War, examining its causes, key events, and lasting impact on the subcontinent's geopolitical landscape.",
-      pages: 32,
-      coverImage: "/storyofpakindiawar.jpeg",
-      pdfUrl: "/The Story of the Pak-India War.pdf",
-    },
-    {
       title: "Unveiling Pakistan's Economy",
       description:
         "A research-driven exploration of Pakistan's economic structure, challenges, and opportunities — written to inform and inspire the next generation of economic thinkers.",
@@ -49,7 +41,7 @@ export default function App() {
       <DarkModeToggle />
 
       {/* Header */}
-      <header className="pt-20 pb-16 px-6">
+      <header className="pt-20 pb-4 px-6">
         <motion.div
           className="max-w-4xl mx-auto text-center"
           initial={{ opacity: 0, y: -30 }}
@@ -67,20 +59,11 @@ export default function App() {
           >
             Words of Ahmad
           </motion.h1>
-          <motion.p
-            className="text-xl text-slate-600 dark:text-slate-300 tracking-wide"
-            style={{ fontFamily: "'Inter', sans-serif" }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            A Project of Youth Awareness Network
-          </motion.p>
         </motion.div>
       </header>
 
       {/* Booklets Section */}
-      <section className="max-w-6xl mx-auto px-6 py-16">
+      <section className="max-w-6xl mx-auto px-6 pt-4 pb-16">
         <motion.h2
           className="text-5xl text-center mb-20 text-slate-900 dark:text-slate-50"
           style={{ fontFamily: "'Cormorant Garamond', serif" }}

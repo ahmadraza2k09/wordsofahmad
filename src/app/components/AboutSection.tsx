@@ -35,7 +35,7 @@ export default function AboutSection({ name, bio, imageUrl }: AboutSectionProps)
               <img
                 src={imageUrl}
                 alt={name}
-                className="w-full h-full object-cover object-center"
+                className="w-full h-full object-cover object-[center_20%]"
                 style={{maxWidth: '100%', maxHeight: '100%'}}
               />
             </div>
